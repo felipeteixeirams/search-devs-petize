@@ -14,11 +14,10 @@ function App (){
         <Routes>
           <Route 
             path="" 
-            element={<Home />}>
-            <Route 
+            element={<Home />} />
+          <Route 
               path="perfil/:id" 
               element={<Perfil />} />
-          </Route>
           <Route 
             path="*" 
             element={<NotFound />} />

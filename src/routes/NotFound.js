@@ -1,9 +1,10 @@
 
-export default function NotFound ()  {
+export default function NotFound (props)  {
     return (
         <>
             <h1>Não Encontrado</h1>
-            <a href="./">Voltar</a>
+            <span>{props.err}</span>
+            <a href="/">Voltar</a>
         </>
     )
 }
