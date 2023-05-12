@@ -1,0 +1,24 @@
+
+
+.card {
+    margin: 10px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 5px;
+    line-height: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: black;
+    line-height: 2rem;
+    padding-bottom: .9rem;
+}
+
+.card-description {
+    padding-bottom: .9rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+}

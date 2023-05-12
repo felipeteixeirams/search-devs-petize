@@ -30,12 +30,17 @@
 #top-bar,
 #developer-information,
 #developer-repos {
-    background-color: rgb(204, 202, 202);
+    background-color: white;
     color: var(--grey);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 1rem;
     box-sizing: border-box;
+}
+
+#developer-information,
+#developer-repos {
+    display: inline-block;
 }
 
 #top-bar {
@@ -59,6 +64,7 @@
     margin: 20px;
     height: 400px;
     width: 20%;
+    max-width: 100%;
     padding: .5rem;
     margin-top:10rem;
     float: left;
@@ -80,8 +86,8 @@
 
 #developer-repos {
     margin-top: 10rem;
-    display: inline-block;
     min-width: 65%;
+    max-width: 100%;
     height: 20rem;
     border-radius: 6px;
 }

@@ -9,7 +9,7 @@ import ItemList from "./ItemList/ItemList";
 export default function Perfil ()  {
 
     const [ userData, setUserData ] = useState('');
-    const [ userRepos, setReposData ] = useState('');
+    const [ userRepos, setUserRepos ] = useState([]);
 
     const { id } = useParams();
 
@@ -19,13 +19,15 @@ export default function Perfil ()  {
         return window.location.href = urlCurrent;
     }
 
+    // Read data from Github's API
     fetch(`https://api.github.com/users/${id}`)
     .then(response => response.json())
-    .then(data => data.message? directToNotFound() : setUserData(data))
+    .then(data => data.message? directToNotFound() : setUserData(data));
 
     fetch(`https://api.github.com/users/${id}/repos`)
     .then(response => response.json())
-    .then(data => setReposData(data))
+    .then(data => setUserRepos(data));
+
 
     return (
         <>
@@ -43,8 +45,16 @@ export default function Perfil ()  {
                 <div id="developer-information">
                     <header>
                         <ul>
-                            <li><h1>{userData.name}</h1></li>
-                            <li>@{userData.login}</li>
+                            <li>
+                                <div>
+                                    {/*<img src=""></img>*/}
+                                </div>
+                                <div>
+                                    <h1>{userData.name}</h1>
+                                    <p>@{userData.login}</p>
+                                </div>
+                            </li>
+                            <li></li>
                             <li>{userData.bio}</li>
                             <li><PeopleOutlineSharp/> {userData.followers} seguidores</li>
                             <li><HeartBrokenOutlined/> {userData.following} seguindo</li>
@@ -59,13 +69,18 @@ export default function Perfil ()  {
 
                 <div id="developer-repos">
                     <main>
-                        <ul>
-                            {
-                                userRepos.forEach(element => {
-                                    <ItemList name={element.name}/>
-                                })
-                            }
-                        </ul>
+                        {
+                            userRepos.map((data=>{
+                                return (
+                                    <ItemList 
+                                        name={data.name}
+                                        description={data.description}
+                                        stars={data.stargazers_count}
+                                        update={data.updated_at}
+                                    />
+                                )
+                            }))
+                        }
                     </main>
                 </div>
 
