@@ -1,4 +1,10 @@
 import { useState } from "react";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Search from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
+import './SearchBar.css';
+
 
 export default function SearchBar () {
 
@@ -6,8 +12,8 @@ export default function SearchBar () {
     const message = document.getElementById('msg');
     
     const directToDetails = (userName) => {
-        let urlCurrent = window.location.href;
-        urlCurrent = urlCurrent + "perfil/" + userName;
+        let urlCurrent = window.location.pathname;
+        urlCurrent = `/perfil/${userName}`;
         return window.location.href = urlCurrent;
     }
 
@@ -33,9 +39,35 @@ export default function SearchBar () {
 
     return (
         <>
-            <input onChange={handleInputChange} type="text" value={username} />
-            <button onClick={handleButtonClick}>Search</button>
-            <p id="msg"></p>
+            <div>
+                <div className="search">
+                    <TextField 
+                        id="outlined-basic"     
+                        onChange={handleInputChange} 
+                        placeholder="Search" 
+                        variant="outlined" 
+                        value={username}
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <Search />
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
+
+                    <Button 
+                        className="btn-search"
+                        variant="contained"
+                        onClick={handleButtonClick}
+                        color="secondary">
+                        
+                        Search
+                    </Button>
+                </div>
+                <br />
+                <p id="msg"></p>
+            </div>
         </>
     )
 }

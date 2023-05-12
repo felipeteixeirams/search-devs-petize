@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+    --blue: #0069CA;
+    --purple: #8C19D2;
+    --light-grey: #fcfcfc;
+    --grey: #4A5568;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-grey);
+}
+
+
+.perfil-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    
+    background: -webkit-linear-gradient(left,
+    var(--blue) 52%, var(--purple) 48%);
+    background-clip:initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#top-bar,
+#developer-information,
+#developer-repos {
+    background-color: rgb(204, 202, 202);
+    color: var(--grey);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#top-bar {
+    display: inline-block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#top-bar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#developer-information {
+    margin: 20px;
+    height: 400px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: .5rem;
+    
+    border-radius: 6px;
+}
+
+#developer-information h1 {
+    font-size: 1.3rem;
+    color: black;
+    line-height: 2rem;
+}
+
+#developer-information li {
+    line-height: 1.5rem;
+}

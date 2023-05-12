@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+    --blue: #0069CA;
+    --purple: #8C19D2;
+}
+
+.home {
+    text-align: center;
+    margin-top: 40vh;
+    margin-bottom: auto;
+} 
+
+.home-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    
+    background: -webkit-linear-gradient(left,
+    var(--blue) 52%, var(--purple) 48%);
+    background-clip:initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
