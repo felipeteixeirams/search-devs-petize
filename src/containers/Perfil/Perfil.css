@@ -11,6 +11,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--light-grey);
+    padding: 0 5rem;
 }
 
 
@@ -40,11 +41,10 @@
 #top-bar {
     display: inline-block;
     position:fixed;
-    top: 0;
     left: 0;
     right: 0;
-    height: auto;
-    margin-bottom: 10px;
+    top: 0;
+    height: 9rem;;
 }
 
 #top-bar > div {
@@ -52,16 +52,16 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 5px;
 }
 
 #developer-information {
     margin: 20px;
     height: 400px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+    width: 20%;
     padding: .5rem;
+    margin-top:10rem;
+    float: left;
     
     border-radius: 6px;
 }
@@ -74,4 +74,14 @@
 
 #developer-information li {
     line-height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#developer-repos {
+    margin-top: 10rem;
+    display: inline-block;
+    min-width: 65%;
+    height: 20rem;
+    border-radius: 6px;
 }
