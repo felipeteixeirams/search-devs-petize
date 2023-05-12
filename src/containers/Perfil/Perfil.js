@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import SearchBar from '../../components/SearchBar/SearchBar';
 import './Perfil.css';
 import { HeartBrokenOutlined, PeopleOutlineSharp, LocationCityOutlined, LocationOffOutlined, MailOutline, Twitter } from "@mui/icons-material";
+import ItemList from "./ItemList/ItemList";
 
 
 export default function Perfil ()  {
@@ -61,8 +62,8 @@ export default function Perfil ()  {
                         <ul>
                             {
                                 userRepos.forEach(element => {
-                                    
-                                });
+                                    <ItemList name={element.name}/>
+                                })
                             }
                         </ul>
                     </main>
