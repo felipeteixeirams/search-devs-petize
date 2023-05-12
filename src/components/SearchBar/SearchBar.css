@@ -21,7 +21,7 @@
 .btn-search {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
-    text-transform: lowercase;
-    padding: 8px 45px;
+    font-size: 1.13rem;
+    text-transform: capitalize;
+    padding: 10px 57px;
 }

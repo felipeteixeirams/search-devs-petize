@@ -7,8 +7,10 @@ export default function Home ()  {
     return (
         <>
             <div className="home">
-                <h1 className="home-title">Search d_evs</h1>
-                <SearchBar />
+                <div>
+                    <h1 className="home-title">Search d_evs</h1>
+                    <SearchBar inputText="Search" />
+                </div>
             </div>
         </>
     )

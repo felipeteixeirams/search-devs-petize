@@ -5,10 +5,18 @@
     --purple: #8C19D2;
 }
 
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
 .home {
     text-align: center;
-    margin-top: 40vh;
-    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 } 
 
 .home-title {

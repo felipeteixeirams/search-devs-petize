@@ -6,7 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import './SearchBar.css';
 
 
-export default function SearchBar () {
+export default function SearchBar (props) {
 
     const [username, setUsername ] = useState('');
     const message = document.getElementById('msg');
@@ -44,7 +44,7 @@ export default function SearchBar () {
                     <TextField 
                         id="outlined-basic"     
                         onChange={handleInputChange} 
-                        placeholder="Search" 
+                        placeholder={props.inputText} 
                         variant="outlined" 
                         value={username}
                         InputProps={{
@@ -60,7 +60,9 @@ export default function SearchBar () {
                         className="btn-search"
                         variant="contained"
                         onClick={handleButtonClick}
-                        color="secondary">
+                        color="secondary"
+                        size="large"
+                        >
                         
                         Search
                     </Button>

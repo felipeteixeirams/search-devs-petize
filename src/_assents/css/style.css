@@ -1,0 +1,56 @@
+.icon-users {
+    background-image: url("../icons/user.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-email {
+    background-image: url("../icons/email.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-heart {
+    background-image: url("../icons/heart.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-link {
+    background-image: url("../icons/link.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-pin-location {
+    background-image: url("../icons/pin-location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-twitter {
+    background-image: url("../icons/twitter.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}
+.icon-work-square {
+    background-image: url("../icons/work-square.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:24px;
+    height: 24px;
+    color: #4A5568
+}

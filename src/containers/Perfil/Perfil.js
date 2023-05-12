@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom"
 import SearchBar from '../../components/SearchBar/SearchBar';
 import './Perfil.css';
-import { HeartBrokenOutlined, PeopleOutlineSharp, LocationCityOutlined, LocationOffOutlined, MailOutline, Twitter } from "@mui/icons-material";
 import ItemList from "./ItemList/ItemList";
+import '../../_assents/css/style.css';
 
 
 export default function Perfil ()  {
@@ -38,16 +38,16 @@ export default function Perfil ()  {
                         <a href="/">
                             <h1 className="perfil-title">Search d_evs</h1>
                         </a>
-                        <SearchBar />
+                        <SearchBar inputText={userData.name}/>
                     </div>
                 </div>
 
                 <div id="developer-information">
                     <header>
                         <ul>
-                            <li>
-                                <div>
-                                    {/*<img src=""></img>*/}
+                            <li className="mb-1">
+                                <div id="avatar">
+                                    <img src={`https://avatars.githubusercontent.com/u/${userData.id}?v=4`}></img>
                                 </div>
                                 <div>
                                     <h1>{userData.name}</h1>
@@ -56,13 +56,13 @@ export default function Perfil ()  {
                             </li>
                             <li></li>
                             <li>{userData.bio}</li>
-                            <li><PeopleOutlineSharp/> {userData.followers} seguidores</li>
-                            <li><HeartBrokenOutlined/> {userData.following} seguindo</li>
-                            <li><LocationCityOutlined/> {userData.company}</li>
-                            <li><LocationOffOutlined/> {userData.location}</li>
-                            <li><MailOutline/> {userData.email == null ? "Não disponível": userData.email}</li>
+                            <li><i className="icon-users"></i> {userData.followers} seguidores</li>
+                            <li><i className="icon-heart"></i> {userData.following} seguindo</li>
+                            <li><i className="icon-work-square"></i> {userData.company}</li>
+                            <li><i className="icon-pin-location"></i> {userData.location}</li>
+                            <li><i className="icon-email"></i> {userData.email == null ? "Não disponível": userData.email}</li>
                             <li>{userData.blog}</li>
-                            <li><Twitter/> @{userData.twitter_username}</li>
+                            <li><i className="icon-twitter"></i> @{userData.twitter_username}</li>
                         </ul>
                     </header>
                 </div>
