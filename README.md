@@ -2,6 +2,7 @@
 <dd>Petize - Desafio para Vaga de Desenvolvedor React Júnior</dd>
 <br>
 
+<img src="./preview.gif" />
 
 <br><br>
 
