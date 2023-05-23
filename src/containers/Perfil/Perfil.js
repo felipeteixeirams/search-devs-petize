@@ -19,6 +19,18 @@ export default function Perfil ()  {
         return window.location.href = urlCurrent;
     }
 
+    // Handling repository last update date
+    const lastUpdateInDays = (reposDate) => {
+        var lastReposUpdate = new Date(reposDate);
+        var today = new Date();
+        var dateDifference = today - lastReposUpdate;
+        dateDifference /= 1000;
+        dateDifference /= 60;
+        dateDifference /= 60;
+        dateDifference /= 24;
+        return dateDifference.toFixed();
+    }
+
     // Read data from Github's API
     fetch(`https://api.github.com/users/${id}`)
     .then(response => response.json())
@@ -28,6 +40,8 @@ export default function Perfil ()  {
     .then(response => response.json())
     .then(data => setUserRepos(data));
 
+    // Sorting the list by 'stargazers.count' or Stars
+    const userReposOrder = userRepos.sort((a,b) => b.stargazers_count - a.stargazers_count)
 
     return (
         <>
@@ -47,7 +61,7 @@ export default function Perfil ()  {
                         <ul>
                             <li className="mb-1">
                                 <div id="avatar">
-                                    <img src={`https://avatars.githubusercontent.com/u/${userData.id}?v=4`}></img>
+                                    <img src={`https://avatars.githubusercontent.com/u/${userData.id}?v=4`} alt="Avatar"></img>
                                 </div>
                                 <div>
                                     <h1>{userData.name}</h1>
@@ -70,13 +84,13 @@ export default function Perfil ()  {
                 <div id="developer-repos">
                     <main>
                         {
-                            userRepos.map((data=>{
+                            userReposOrder.map((data=>{
                                 return (
                                     <ItemList 
                                         name={data.name}
                                         description={data.description}
                                         stars={data.stargazers_count}
-                                        update={data.updated_at}
+                                        update={lastUpdateInDays(data.updated_at)}
                                     />
                                 )
                             }))
