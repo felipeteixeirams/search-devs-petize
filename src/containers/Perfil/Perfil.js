@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom"
+import { Stack, Avatar } from "@mui/material";
 import SearchBar from '../../components/SearchBar/SearchBar';
-import './Perfil.css';
 import ItemList from "./ItemList/ItemList";
+import './Perfil.css';
 import '../../_assents/css/style.css';
 
 
@@ -60,9 +61,13 @@ export default function Perfil ()  {
                     <header>
                         <ul>
                             <li className="mb-1">
-                                <div id="avatar">
-                                    <img src={`https://avatars.githubusercontent.com/u/${userData.id}?v=4`} alt="Avatar"></img>
-                                </div>
+                                <Stack direction="row" spacing={2}>
+                                    <Avatar
+                                        alt="Developer's avatar"
+                                        src={`https://avatars.githubusercontent.com/u/${userData.id}?v=4`}
+                                        sx={{ width: 48, height: 48 }}
+                                    />    
+                                </Stack>
                                 <div>
                                     <h1>{userData.name}</h1>
                                     <p>@{userData.login}</p>

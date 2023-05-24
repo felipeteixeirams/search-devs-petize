@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Search from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
 import './SearchBar.css';
+import { styled } from '@mui/material/styles';
 
 
 export default function SearchBar (props) {
@@ -23,15 +24,15 @@ export default function SearchBar (props) {
             
             fetch(url)
             .then((response) => response.json())
-            .then((data) => data.message? message.innerHTML = "Username não encontrado!": directToDetails(data.login))
+            .then((data) => data.message? message.innerHTML = "Developer not found!": directToDetails(data.login))
             .catch((error) => {
                 var message = document.getElementById('msg');
-                message.innerHTML = "Ops, tente novamente mais tarde.";
+                message.innerHTML = "Ops, try again later.";
                 console.log(error)
             });
         }else{
             var message = document.getElementById('msg');
-            message.innerHTML = "Por favor, verifique o valor informado.";
+            message.innerHTML = "Please, check the entered value.";
         }
     }
 
@@ -50,17 +51,57 @@ export default function SearchBar (props) {
         searchUser(username);
     }
 
+
+    /**
+     * Styles components
+     */
+
+    const SearchButton = styled(Button)({
+        boxShadow: 'none',
+        boxSizing: 'border-box',
+        textTransform: 'none',
+        fontSize: 16,
+        padding: '10px 56px',
+        border: '1px solid',
+        lineHeight: 1.5,
+        borderRadius: '6px',
+        backgroundColor: '#8C19D2',
+        borderColor: '#8C19D2',
+        marginLeft: '2rem',
+        fontFamily: [
+            'Inter',
+            'Arial',
+            'sans-serif'
+        ].join(','),
+        '&:hover': {
+            backgroundColor: '#0069d9',
+            borderColor: '#0062cc',
+            boxShadow: 'none',
+        },
+        '&:active': {
+            boxShadow: 'none',
+            backgroundColor: '#0062cc',
+            borderColor: '#005cbf',
+        },
+        '&:focus': {
+            boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+        },
+      });
+
     return (
         <>
             <div>
                 <div className="search">
-                    <TextField 
-                        id="outlined-basic"     
+
+                    <TextField
+                        id="outlined-basic" 
                         onChange={handleInputChange} 
                         placeholder={props.inputText} 
                         variant="outlined" 
+                        size="small"
                         value={username}
                         spellCheck="false"
+                        color='secondary'
                         onKeyPress={handleKeyDownEnter}
                         InputProps={{
                             startAdornment: (
@@ -71,16 +112,9 @@ export default function SearchBar (props) {
                         }}
                     />
 
-                    <Button 
-                        className="btn-search"
-                        variant="contained"
-                        onClick={handleButtonClick}
-                        color="secondary"
-                        size="large"
-                        >
-                        
+                    <SearchButton onClick={handleButtonClick} variant="contained" disableRipple>
                         Search
-                    </Button>
+                    </SearchButton>
                 </div>
                 <br />
                 <p id="msg"></p>

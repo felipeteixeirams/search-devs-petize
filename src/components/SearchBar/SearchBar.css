@@ -2,26 +2,31 @@
 
 .search {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     
     margin-top: 3.5rem;
 }
 
-.search > div {
-    margin-right: 2rem;
-}
-
 #outlined-basic {
-    width: 37rem;
+    width: 32rem;
     border-radius: 6px;
     font-size: 1.2rem;
 }
 
-.btn-search {
+#msg {
+    margin-left: 3rem;
+    text-align: left;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.13rem;
-    text-transform: capitalize;
-    padding: 10px 57px;
+    font-size: .9rem;
+    color: red;
+    font-weight: 600;
+}
+
+@media (max-width: 789px)
+{
+    .search button:first-of-type {
+    display: none;
+   }
 }
